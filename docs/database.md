@@ -1,12 +1,20 @@
 ### Database creation
 `psql -d postgres -U maury`
- After creating the db, configure it accordingli in the database.yml file
+ After creating the dbs using the names in the yml file, configure it accordingli in the database.yml file
+```
+in Defaults under pool, Add
 
+  host: localhost
+  username: username
+  password: password of username
+  ```
 Then create the databases for development and test as in the config/database.yml
 ### DB interactions
- `\c name_of_db` 
 
- `\dt` => to list all tables
+ `\l` => to list all dbs
+ `\c name_of_db` => to use that db
+ `\dt` to list all tables
+
 
  `SELECT * FROM { table}`
 

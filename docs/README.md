@@ -49,15 +49,29 @@ This will start puma for developement
 
 ### [Controllers](controllers.md)
 
-### [Testing in ROR](testing.md)
+### [ROR testing](ror-testing.md)
+
+### [Testing in rspec](testing.md)
 
 ### [Database operations](database.md)
 
 
 
-* Services (job queues, cache servers, search engines, etc.)
+### ENV variables
+ #### Figaro
+ * Add it as a gem 
+ ` gem figaro`
+
+ `rails generate figaro:install`
+ `bundle exec figaro install` -> to generate the .yml file
+
+ Then go to `config/application.yml and store your variables
+
+ * Usage
+
+ `ENV['variable name']`
 
 * Deployment instructions
-
+ `figaro heroku:set -e production`
 * ...
 
