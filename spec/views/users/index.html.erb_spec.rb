@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "users/index.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "users/index", type: :view do
+  it 'Displays all users' do
+    assign(:users, [User.new(:last_name => 'Okumu')])
+    render
+    expect(rendered).to match(/Okumu/)
+  end
 end

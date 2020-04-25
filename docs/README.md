@@ -47,6 +47,8 @@ from root
 
 This will start puma for developement
 
+`rails console` => will load our app in a terminal .
+
 ### [Controllers](controllers.md)
 
 ### [ROR testing](ror-testing.md)
