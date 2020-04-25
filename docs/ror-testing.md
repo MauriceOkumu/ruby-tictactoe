@@ -52,14 +52,158 @@ In an existing model,
 #### Example of a describe block
 
 ```
-RSpec.describe 'Post' do           #
-  context 'before publication' do  # (almost) plain English
-    it 'cannot have comments' do   #
-      expect { Post.create.comments.create! }.to raise_error(ActiveRecord::RecordInvalid)  # test code
+RSpec.describe User do           #
+    it 'has 0  users in the beginning ' do   #
+      expect(User.count).to eq(0)  # test code
     end
   end
 end
 ```
+
+### Transactional examples(DB tests)
+
+* Remember
+- Data modified by before(:example) will be rolled back
+- Data modified by before(:context) wont so use after(:context)
+```
+describe User do
+  before(:context) do
+    @user = User.create(name => 'Maurice')
+  end
+
+  after(:context) do
+   @user.destroy
+   end
+```
+
+### Helper testing
+
+Consider using the `helper module ` instead of loading the helper file
+``` module Ahelper
+    def area(l, w)
+      l * w
+    end
+  end
+
+  decribe Ahelper do
+    decsribe 'area' do
+     it 'return area' do
+     expect (helper.area(2,2)).to eq(4)
+     end
+    end
+  end
+```
+
+### Controller specs request
+ ` get(:index)`
+
+ `post(:create : user =>{name  => 'Maurice'} )`
+
+ * Objects available for controller specs
+   - controller
+   - request
+   - response
+
+  * Attributes
+    - assigns
+    - session
+    - flash
+    - cookies
+
+    #### Example
+```
+    def index
+     @users = User.all
+    end
+
+    describe UsersController do
+      let(:users) {User.all}
+      describe 'Get index' do
+        it 'assigns all user to @users' do
+
+        #the get simulates the http request
+        get :index
+        expect(assigns('users')).to eq(users) 
+        end
+      end
+    end
+```
+use `request.cookies['logged_in']` when using cookies
+
+### Controller specs response
+
+`expect(response).to render_template( template)`
+
+`expect(response).to redirect_to( path )`
+
+`expect(response).to have_http_status( status )`
+
+#### Example of response
+```
+  describe 'GET index' do
+
+    before(:example) { get :index}
+      it 'is a success' do
+      expect(response).to have_http_status(:ok)
+      end
+
+      it 'is renders template' do
+      expect(response).to render_template('index')
+      end
+    
+  end
+```
+
+### View spec
+* Objects available
+  - view
+  - assign
+  - render
+  - rendered
+
+  #### Example
+  ```
+  describe 'users/index' do
+   it 'displays all users' do 
+    assign(:users, [User.new(:name => 'Imara')])
+
+    render
+
+    expect(rendered).to match(/Imara/)
+    end
+   end
+  
+  ```
+
+  ### Fixtures
+  These are sample data store as YAML files insidde `spec/fixtures`
+  ``` 
+    #spec/fixtures/users.yml
+    jared:
+        name: Jared
+        email: a@b
+
+    imara:
+       name: Imara
+       email: b@c
+  ```
+
+  Then use the fixture as `users(:jared)`
+
+  ### Acceptance (End to End) testing and more reading
+  `Cucumber`
+  `Capybara`
+  `Selenium`
+  `Poltergeist`
+
+  ### Atomatic testing CI/CD
+  `Autotest`
+  `guard-rspec`
+  `Jenkins`
+  `simplecov`
+  `vcr`
+  `spork`
+
 
 
 

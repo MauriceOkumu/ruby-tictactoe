@@ -36,6 +36,7 @@ With columns
 `rails db:migrate VERSION=0` this will migrate all migrations down
 Alternatively give the version to migrate to.
 
+
 ### [General](README.md)
 
 ### [Controllers](controllers.md)
