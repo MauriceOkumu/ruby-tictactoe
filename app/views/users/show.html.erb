@@ -1,2 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Users Details</h1>
+<%= link_to('<< Back to list', users_path) %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <td><%= "#{@user.first_name} #{@user.last_name}"%></td>
+  </tr>
+  <tr>
+    <th>Created at</th>
+    <td><%= @user.created_at%></td>
+  </tr>
+  <tr>
+    <th>Updated at</th>
+    <td><%= @user.updated_at%></td>
+  </tr>
+  <tr>
+    <th>User email</th>
+    <td><%= @user.id%></td>
+  </tr>
+</table>

@@ -1,2 +1,9 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit your info</h1>
+<%= link_to('<< Back to list', users_path) %>
+<%= form_for (@user) do |f| %>
+<%# Using Partial form for shared html _form%>
+<%= render(:partial => 'forms', :locals => {:f => f}) %>
+<div class='form-buttons'>
+  <%= f.submit('Update user')%>
+</div>
+<% end %> 
