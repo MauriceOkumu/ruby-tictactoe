@@ -21,7 +21,7 @@ This will load the users controller routes
 ```
    resources :users do
      member do
-      get : delete
+      get :delete
       end
      end  
 ```

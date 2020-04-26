@@ -43,4 +43,6 @@ Alternatively give the version to migrate to.
 
 ### [Testing in rspec](testing.md)
 
+### [Control-flow](control-flow.md)
+
 ### [ROR testing](ror-testing.md)

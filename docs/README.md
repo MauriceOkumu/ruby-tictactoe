@@ -55,6 +55,8 @@ This will start puma for developement
 
 ### [Testing in rspec](testing.md)
 
+### [Control-flow](control-flow.md)
+
 ### [Database operations](database.md)
 
 

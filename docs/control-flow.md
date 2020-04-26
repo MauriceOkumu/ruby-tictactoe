@@ -73,3 +73,13 @@ views/application/_error_messages.html.erb
 ```
 
 Then do `<%= error_messages_for(f.object) %>` in the form partials 
+
+## [Controllers](controllers.md)
+
+### [Database operations](database.md)
+
+### [ROR testing](ror-testing.md)
+
+### [Rspec testing](testing.md)
+
+### [General](README.md)

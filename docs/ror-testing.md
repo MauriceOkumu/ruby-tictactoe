@@ -213,4 +213,6 @@ use `request.cookies['logged_in']` when using cookies
 
 ### [Testing in rspec](testing.md)
 
+### [Control-flow](control-flow.md)
+
 ### [General](README.md)
