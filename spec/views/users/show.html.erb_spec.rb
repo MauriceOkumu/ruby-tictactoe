@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "users/show.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "users/show.html.erb", type: :view do
+  it 'Displays @user' do
+    assign(:user, User.find(params[:id]))
+    render
+    expect(rendered).to match(/Okumu/)
+  end
 end
