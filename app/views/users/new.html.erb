@@ -1,2 +1,10 @@
 <h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Edit your info</h1>
+<%= link_to('<< Back to list', users_path) %>
+<%= form_for (@user) do |f| %>
+<%# Using Partial form for shared html _form%>
+<%= render(:partial => 'forms', :locals => {:f => f}) %>
+<div class='form-buttons'>
+  <%= f.submit('Create new user')%>
+</div>
+<% end %> 
