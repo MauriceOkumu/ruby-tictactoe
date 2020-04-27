@@ -32,12 +32,13 @@ describe UsersController, type: :request do
     end
   end
 
-  # describe "GET /new" do
-  #   it "returns http success" do
-  #     get "/users/new"
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET /new" do
+    it "returns http success" do
+      get "/users/new"
+      expect(response).to have_http_status(:success)
+    end
+  end
+
   describe "GET /edit" do
     let(:user) { User.edit(params[:id]) }
     before (:example) do
@@ -55,11 +56,11 @@ describe UsersController, type: :request do
     end
   end
 
-  # describe "GET /delete" do
-  #   it "returns http success" do
-  #     get "/users/delete"
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET /delete" do
+    it "returns http success" do
+      get "/users/"
+      expect(response).to have_http_status(:success)
+    end
+  end
 
 end
