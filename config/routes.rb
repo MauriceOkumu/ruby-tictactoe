@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'game/start'
+  get 'game/restart'
+  get 'game/close'
   resources :users do
     member do
       get :delete
