@@ -13,8 +13,11 @@
     <td><%=user.first_name%></td>
     <td><%=user.last_name%></td>
     <td><%=user.email%></td>
-    <td><%= link_to('show user', user_path(user),:class => 'action show') %></td>
-    <td><%= link_to('edit user', edit_user_path(user),:class => 'action edit') %></td>
+    <td><button><%= link_to('show user', user_path(user),:class => 'action show') %></button></td>
+    <td><button><%= link_to('edit user', edit_user_path(user),:class => 'action edit') %></button></td>
+    <td><button><%= link_to('delete user', delete_user_path(user),:class => 'action delete') %></button></td>
   </tr>
   <% end %>
 </table>
+
+<p><%= link_to('Create new user', new_user_path(@user),:class => 'action edit') %></p>
