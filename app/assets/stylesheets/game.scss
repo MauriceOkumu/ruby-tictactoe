@@ -1,3 +1,37 @@
 // Place all the styles related to the game controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.tic-tac-toe {
+    display: flex;
+    justify-content: center;
+    size: 40% ;
+    resize: both;
+    padding: 10px;
+    overflow: inherit;
+    table {
+        table-layout: auto;
+        width: 30%;
+       
+    }
+    .box {
+       background-color: red;
+       size: inherit;
+       border: 2px solid black;
+       text-align: center;
+       resize: both;
+       height: 40px;
+       padding-top: 25%;
+       border-radius: 30px;
+    }
+}
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}

@@ -1,8 +1,21 @@
-<h1>Game#start</h1>
-<p>Start the game</p>
+<h1>Tic Tac Toe</h1>
+<div class="tic-tac-toe">
 
+<table>
+<% 3.times do%>
+ <tr>
+ <% 3.times do%>
+ <td><div class="box">X or O</div></td>
+ <% end%>
+ </tr>
+<% end %>
+</table>
+</div>
+<div class="game-buttons">
 <button><%= link_to('Re-Start the game',:action => 'restart') %></button>
 
 <button><%= link_to('Close the game',:action => 'close') %></button>
 
 <button><%= link_to('<<Home ',users_path) %></button>
+</div>
+
