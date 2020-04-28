@@ -1,5 +1,7 @@
 class GameController < ApplicationController
+  attr_accessor :played
   def start
+    @played = 'X'
   end
 
   def restart
@@ -7,4 +9,5 @@ class GameController < ApplicationController
 
   def close
   end
+
 end

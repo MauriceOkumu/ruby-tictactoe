@@ -14,14 +14,16 @@
        
     }
     .box {
-       background-color: red;
+       background-color: rgb(48, 84, 202);
        size: inherit;
        border: 2px solid black;
        text-align: center;
        resize: both;
        height: 40px;
-       padding-top: 25%;
+       padding-top: 15%;
        border-radius: 30px;
+       font-size: 25px;
+       animation-duration: 4s;
     }
 }
 .game-buttons {
@@ -35,3 +37,10 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }

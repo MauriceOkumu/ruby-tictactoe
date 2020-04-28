@@ -1,11 +1,11 @@
 <h1>Tic Tac Toe</h1>
 <div class="tic-tac-toe">
-
+<% @later = 1%>
 <table>
 <% 3.times do%>
  <tr>
  <% 3.times do%>
- <td><div class="box">X or O</div></td>
+ <td><div class="box" onclick="myFunc(this)" id= <%= @later+=1%> ><%=@played %></div></td>
  <% end%>
  </tr>
 <% end %>
@@ -18,4 +18,16 @@
 
 <button><%= link_to('<<Home ',users_path) %></button>
 </div>
+<script>
+
+ function myFunc(elem) {
+
+     elem.innerHTML === 'X' ?  elem.innerHTML = 'O' :  elem.innerHTML = 'X'
+      elem.innerHTML === 'X' ?  elem.style.color = 'red' :  elem.style.color = 'black'
+     console.log('Clicked this', elem.innerHTML)
+    elem.style.animationName = 'example'
+    
+
+ }
+</script>
 
